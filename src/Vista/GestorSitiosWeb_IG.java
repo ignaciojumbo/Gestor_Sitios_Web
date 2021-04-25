@@ -165,17 +165,21 @@ public class GestorSitiosWeb_IG extends javax.swing.JFrame implements Comuinicac
         jPanel4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Symbol", 1, 18)); // NOI18N
-        jLabel1.setText("Registro de links de paginas web");
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/dominio.png"))); // NOI18N
+        jLabel1.setText("Gestor de Sitos web IG");
 
         jPanel5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         jLabel2.setFont(new java.awt.Font("Palatino Linotype", 1, 12)); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/nombre.png"))); // NOI18N
         jLabel2.setText("Nombre de la pagina");
 
         jLabel3.setFont(new java.awt.Font("Palatino Linotype", 1, 12)); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/calendario.png"))); // NOI18N
         jLabel3.setText("Fecha de registro");
 
         jLabel4.setFont(new java.awt.Font("Palatino Linotype", 1, 12)); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/enlace.png"))); // NOI18N
         jLabel4.setText("Link de la pagina");
 
         txtfecharegistro.setEditable(false);
@@ -198,6 +202,7 @@ public class GestorSitiosWeb_IG extends javax.swing.JFrame implements Comuinicac
         });
 
         jLabel5.setFont(new java.awt.Font("Palatino Linotype", 1, 12)); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/categoria.png"))); // NOI18N
         jLabel5.setText("Tipo de pagina");
 
         txtusuario.setFont(new java.awt.Font("Palatino Linotype", 1, 12)); // NOI18N
@@ -213,9 +218,11 @@ public class GestorSitiosWeb_IG extends javax.swing.JFrame implements Comuinicac
         cbxtipoPagina.setToolTipText("Tipo de página web");
 
         jLabel6.setFont(new java.awt.Font("Palatino Linotype", 1, 12)); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/usuario.png"))); // NOI18N
         jLabel6.setText("Usuario");
 
         jLabel7.setFont(new java.awt.Font("Palatino Linotype", 1, 12)); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/contrasena.png"))); // NOI18N
         jLabel7.setText("Contraseña");
 
         txtclave.setFont(new java.awt.Font("Palatino Linotype", 1, 12)); // NOI18N
@@ -326,6 +333,7 @@ public class GestorSitiosWeb_IG extends javax.swing.JFrame implements Comuinicac
         });
 
         jLabel8.setFont(new java.awt.Font("Palatino Linotype", 1, 12)); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/lupa.png"))); // NOI18N
         jLabel8.setText("Buscar página");
 
         txtbusquedad.setFont(new java.awt.Font("Palatino Linotype", 1, 12)); // NOI18N
@@ -380,7 +388,7 @@ public class GestorSitiosWeb_IG extends javax.swing.JFrame implements Comuinicac
                     .addComponent(jLabel8)
                     .addComponent(cmbbusquedad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtbusquedad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -390,15 +398,16 @@ public class GestorSitiosWeb_IG extends javax.swing.JFrame implements Comuinicac
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(339, 339, 339)
+                        .addComponent(jLabel1)))
                 .addContainerGap(50, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(310, 310, 310))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
