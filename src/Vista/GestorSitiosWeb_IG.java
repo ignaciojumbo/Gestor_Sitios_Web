@@ -40,9 +40,10 @@ public class GestorSitiosWeb_IG extends javax.swing.JFrame implements Comuinicac
         //sirve para cambiar el icono del programa
         setIconImage(new ImageIcon(getClass().getResource("/iconos/internet.png")).getImage());
         utilidad = new Utilidad();
-        gestionPagina = new gestionPagina(txtfecharegistro, txtnombrepagina, 
+        gestionPagina = new gestionPagina(txtfecharegistro, txtnombrepagina,
                 txtlinkpagina, cbxtipoPagina, txtusuario, txtclave, utilidad, this);
-
+//        Date fechaActual = new Date();
+//        fechaActual.getDay();
         txtfecharegistro.setText(utilidad.fecha(new Date()));
         bneditar.setEnabled(false);
         bneliminar.setEnabled(false);
@@ -523,13 +524,11 @@ public class GestorSitiosWeb_IG extends javax.swing.JFrame implements Comuinicac
 
     private void jCboxverclaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCboxverclaveActionPerformed
         if (jCboxverclave.isSelected()) {
-            
-            
-            txtclave.setEchoChar((char)0);
+
+            txtclave.setEchoChar((char) 0);
 
         } else {
-            txtclave.setEchoChar((char)1);
-            
+            txtclave.setEchoChar((char) 1);
 
         }
     }//GEN-LAST:event_jCboxverclaveActionPerformed
