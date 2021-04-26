@@ -53,33 +53,33 @@ public class GestorSitiosWeb_IG extends javax.swing.JFrame implements Comuinicac
         if (controladorpagina != null) {
             controladorpagina = new Controladorbd();
             controladorpagina.registrarLink(gestionPagina.guardar());
-            JOptionPane.showMessageDialog(rootPane, "Regiatro guardado con exito");
+            JOptionPane.showMessageDialog(rootPane, "Sitio web guardado con éxito");
             tabla();
             gestionPagina.limpiar();
 
         } else {
-            JOptionPane.showMessageDialog(rootPane, "Error las guardar", "ERROR", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(rootPane, "Error al guardar", "ERROR", JOptionPane.ERROR_MESSAGE);
         }
     }
 
     void editar() {
         // verifico que halla ingresado datos para editar
         if (gestionPagina == null) {
-            JOptionPane.showMessageDialog(rootPane, "Error al editar", "ERROR", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(rootPane, "Error al editar el sitio web", "ERROR", JOptionPane.ERROR_MESSAGE);
         } else {
 
             Pagina paginaediatar = gestionPagina.guardar();
             paginaediatar.setIdPagina(pagina.getIdPagina());// obtengo el id del registro a editar
 
             if (controladorpagina.editar(paginaediatar)) {
-                JOptionPane.showMessageDialog(rootPane, "Editado con exto del sistema", "GUARDADO", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(rootPane, "Sitio web editado con éxito", "EDITADO", JOptionPane.INFORMATION_MESSAGE);
                 tabla();
                 gestionPagina.limpiar();
                 bnguardar.setEnabled(true);
                 bneditar.setEnabled(false);
                 bneliminar.setEnabled(false);
             } else {
-                JOptionPane.showMessageDialog(rootPane, "Error al editar", "ERROR", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(rootPane, "Error al editar el sitio web", "ERROR", JOptionPane.ERROR_MESSAGE);
             }
         }
 
@@ -94,7 +94,7 @@ public class GestorSitiosWeb_IG extends javax.swing.JFrame implements Comuinicac
             paginaediatar.setIdPagina(pagina.getIdPagina());// obtengo el id del registro a editar
 
             if (controladorpagina.eliminar(paginaediatar)) {
-                JOptionPane.showMessageDialog(rootPane, "Eliminado con exito del sistema", "ELIMINADO", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(rootPane, "Sitio web eliminado con éxito del sistema", "ELIMINADO", JOptionPane.INFORMATION_MESSAGE);
                 tabla();
                 bnguardar.setEnabled(true);
                 bneditar.setEnabled(false);

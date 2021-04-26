@@ -131,6 +131,12 @@ public class gestionPagina {
             link.requestFocus();
             return null;
         }
+        
+        if(cbxtipoPagina.getSelectedIndex()== 0){
+            JOptionPane.showMessageDialog(frame, "Debe seleccionar una tipo de pagina", "Error", JOptionPane.ERROR_MESSAGE);
+            cbxtipoPagina.requestFocus();
+            return null;
+        }
 
         Pagina p = new Pagina();
         p.setNombrePagina(txtnombre.getText());
