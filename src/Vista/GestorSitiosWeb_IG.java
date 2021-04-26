@@ -6,7 +6,7 @@
 package Vista;
 
 import Controlador.Controladorbd;
-import ModelJTableModel.ModeloPagina;
+import ModelJTableModel.ModeloTablaPagina;
 import Modelo.Pagina;
 import Utilidad.Utilidad;
 import java.awt.Desktop;
@@ -28,19 +28,20 @@ public class GestorSitiosWeb_IG extends javax.swing.JFrame implements Comuinicac
     private Utilidad utilidad;
     private gestionPagina gestionPagina;
     private Controladorbd controladorpagina;
-    private ModeloPagina tablaPagina;
+    private ModeloTablaPagina tablaPagina;
 
     /**
      * Creates new form GestionPaginas
      */
     public GestorSitiosWeb_IG() {
         controladorpagina = new Controladorbd();
-        tablaPagina = new ModeloPagina(controladorpagina.obtenerlinkspaginas(), this);
+        tablaPagina = new ModeloTablaPagina(controladorpagina.obtenerlinkspaginas(), this);
         initComponents();
         //sirve para cambiar el icono del programa
         setIconImage(new ImageIcon(getClass().getResource("/iconos/internet.png")).getImage());
         utilidad = new Utilidad();
-        gestionPagina = new gestionPagina(txtfecharegistro, txtnombrepagina, txtlinkpagina, cbxtipoPagina, txtusuario, txtclave, utilidad, this);
+        gestionPagina = new gestionPagina(txtfecharegistro, txtnombrepagina, 
+                txtlinkpagina, cbxtipoPagina, txtusuario, txtclave, utilidad, this);
 
         txtfecharegistro.setText(utilidad.fecha(new Date()));
         bneditar.setEnabled(false);
@@ -151,7 +152,6 @@ public class GestorSitiosWeb_IG extends javax.swing.JFrame implements Comuinicac
         txtbusquedad = new javax.swing.JTextField();
         cmbbusquedad = new javax.swing.JComboBox<>();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -440,10 +440,6 @@ public class GestorSitiosWeb_IG extends javax.swing.JFrame implements Comuinicac
 
         jTabbedPane1.addTab("Registro de links", jPanel1);
 
-        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/carpeta.png"))); // NOI18N
-        jMenu1.setText("Archivo");
-        jMenuBar1.add(jMenu1);
-
         jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/senal-de-informacion.png"))); // NOI18N
         jMenu2.setText("Acerca de ");
         jMenu2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -592,7 +588,6 @@ public class GestorSitiosWeb_IG extends javax.swing.JFrame implements Comuinicac
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
@@ -652,7 +647,8 @@ public class GestorSitiosWeb_IG extends javax.swing.JFrame implements Comuinicac
         contadorClick++;
         if (contadorClick == 3) {
             if (JOptionPane.showConfirmDialog(rootPane, "Se abrira el enlace. Desea continuar",
-                    "Se abrira el enlace", JOptionPane.INFORMATION_MESSAGE, JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+                    "Se abrira el enlace", JOptionPane.INFORMATION_MESSAGE, JOptionPane.YES_NO_OPTION)
+                    == JOptionPane.YES_OPTION) {
                 //esto sirve para abrir el enlace
                 Desktop enlace = Desktop.getDesktop();
                 String enlaceAcceder = pagina.getLinkPagina();

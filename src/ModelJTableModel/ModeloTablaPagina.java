@@ -5,13 +5,14 @@ import Vista.GestorSitiosWeb_IG;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
-public class ModeloPagina extends AbstractTableModel {
+public class ModeloTablaPagina extends AbstractTableModel {
 
-    public String[] n_colNames = {"FECHA DE REGISTRO", "NOMBRE DE LA PAGINA", "LINK DE PAGINA","TIPO DE PÁGINA","USUARIO","CONTRASEÑA"};
+    public String[] n_colNames = {"FECHA DE REGISTRO", "NOMBRE DE LA PAGINA", 
+        "LINK DE PAGINA","TIPO DE PÁGINA","USUARIO","CONTRASEÑA"};
     public List<Pagina> listpagina;
     private GestorSitiosWeb_IG gContable;
 
-    public ModeloPagina(List<Pagina> listpagina, GestorSitiosWeb_IG gContable) {
+    public ModeloTablaPagina(List<Pagina> listpagina, GestorSitiosWeb_IG gContable) {
         this.listpagina = listpagina;
         this.gContable = gContable;
     }

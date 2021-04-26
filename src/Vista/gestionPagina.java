@@ -29,7 +29,9 @@ public class gestionPagina {
     private Utilidad util;
     private JFrame frame;
 
-    public gestionPagina(JTextField txtfehcaregistro, JTextField txtnombre, JTextField link, JComboBox cbxtipoPagina, JTextField txtusuario, JPasswordField txtclave, Utilidad util, JFrame frame) {
+    public gestionPagina(JTextField txtfehcaregistro, JTextField txtnombre, 
+            JTextField link, JComboBox cbxtipoPagina, JTextField txtusuario, 
+            JPasswordField txtclave, Utilidad util, JFrame frame) {
         this.txtfehcaregistro = txtfehcaregistro;
         this.txtnombre = txtnombre;
         this.link = link;

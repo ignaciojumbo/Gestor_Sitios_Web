@@ -9,9 +9,6 @@ import Modelo.Pagina;
 
 
 public interface Comuinicaciontablapagina {
-    
+    // sirve para la comunicacion de la tabla
     void clickPagina(Pagina p);
-    
-    
-    
 }
