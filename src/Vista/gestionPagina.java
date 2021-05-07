@@ -7,7 +7,6 @@ package Vista;
 
 import Modelo.Pagina;
 import Utilidad.Utilidad;
-import java.util.Date;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -24,22 +23,46 @@ public class gestionPagina {
     private JTextField txtnombre;
     private JTextField link;
     private JComboBox cbxtipoPagina;
+    private JTextField txtdescripcion;
     private JTextField txtusuario;
     private JPasswordField txtclave;
     private Utilidad util;
     private JFrame frame;
 
-    public gestionPagina(JTextField txtfehcaregistro, JTextField txtnombre, 
-            JTextField link, JComboBox cbxtipoPagina, JTextField txtusuario, 
-            JPasswordField txtclave, Utilidad util, JFrame frame) {
+    public gestionPagina(JTextField txtfehcaregistro, JTextField txtnombre, JTextField link, JComboBox cbxtipoPagina, JTextField txtdescripcion, JTextField txtusuario, JPasswordField txtclave, Utilidad util, JFrame frame) {
         this.txtfehcaregistro = txtfehcaregistro;
         this.txtnombre = txtnombre;
         this.link = link;
         this.cbxtipoPagina = cbxtipoPagina;
+        this.txtdescripcion = txtdescripcion;
         this.txtusuario = txtusuario;
         this.txtclave = txtclave;
         this.util = util;
         this.frame = frame;
+    }
+
+    public JTextField getTxtfehcaregistro() {
+        return txtfehcaregistro;
+    }
+
+    public void setTxtfehcaregistro(JTextField txtfehcaregistro) {
+        this.txtfehcaregistro = txtfehcaregistro;
+    }
+
+    public JTextField getTxtnombre() {
+        return txtnombre;
+    }
+
+    public void setTxtnombre(JTextField txtnombre) {
+        this.txtnombre = txtnombre;
+    }
+
+    public JTextField getLink() {
+        return link;
+    }
+
+    public void setLink(JTextField link) {
+        this.link = link;
     }
 
     public JComboBox getCbxtipoPagina() {
@@ -48,6 +71,14 @@ public class gestionPagina {
 
     public void setCbxtipoPagina(JComboBox cbxtipoPagina) {
         this.cbxtipoPagina = cbxtipoPagina;
+    }
+
+    public JTextField getTxtdescripcion() {
+        return txtdescripcion;
+    }
+
+    public void setTxtdescripcion(JTextField txtdescripcion) {
+        this.txtdescripcion = txtdescripcion;
     }
 
     public JTextField getTxtusuario() {
@@ -82,34 +113,13 @@ public class gestionPagina {
         this.frame = frame;
     }
 
-    public JTextField getTxtnombre() {
-        return txtnombre;
-    }
-
-    public void setTxtnombre(JTextField txtnombre) {
-        this.txtnombre = txtnombre;
-    }
-
-    public JTextField getTxtfehcaregistro() {
-        return txtfehcaregistro;
-    }
-
-    public void setTxtfehcaregistro(JTextField txtfehcaregistro) {
-        this.txtfehcaregistro = txtfehcaregistro;
-    }
-
-    public JTextField getLink() {
-        return link;
-    }
-
-    public void setLink(JTextField link) {
-        this.link = link;
-    }
+   
 
     public void limpiar() {
         txtnombre.setText("");
         cbxtipoPagina.setSelectedIndex(0);
         link.setText("");
+        txtdescripcion.setText(" ");
         txtclave.setText("");
         txtusuario.setText("");
     }
@@ -143,6 +153,7 @@ public class gestionPagina {
         p.setFechaRegistro(txtfehcaregistro.getText());
         p.setLinkPagina(link.getText());
         p.setTipoPagina(cbxtipoPagina.getSelectedItem().toString());
+        p.setDescripcion(txtdescripcion.getText());
         p.setUsuario(txtusuario.getText());
         p.setClave(txtclave.getText());
         return p;

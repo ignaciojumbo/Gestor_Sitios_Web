@@ -5,8 +5,6 @@
  */
 package Modelo;
 
-import java.util.Date;
-
 /**
  *
  * @author Sammy Guergachi <sguergachi at gmail.com>
@@ -17,6 +15,7 @@ public class Pagina {
     private String nombrePagina;
     private String linkPagina;
     private String tipoPagina;
+    private String descripcion;
     private String Usuario;
     private String Clave;
 
@@ -60,6 +59,14 @@ public class Pagina {
         this.tipoPagina = tipoPagina;
     }
 
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
     public String getUsuario() {
         return Usuario;
     }
@@ -75,6 +82,8 @@ public class Pagina {
     public void setClave(String Clave) {
         this.Clave = Clave;
     }
+
+   
     
 
 }

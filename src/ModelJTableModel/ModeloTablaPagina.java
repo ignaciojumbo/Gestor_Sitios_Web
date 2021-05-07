@@ -8,7 +8,7 @@ import javax.swing.table.AbstractTableModel;
 public class ModeloTablaPagina extends AbstractTableModel {
 
     public String[] n_colNames = {"FECHA DE REGISTRO", "NOMBRE DE LA PAGINA", 
-        "LINK DE PAGINA","TIPO DE PÁGINA","USUARIO","CONTRASEÑA"};
+        "LINK DE PAGINA","TIPO DE PÁGINA","DESCRIPCIÓN DE PÁGINA","USUARIO","CONTRASEÑA"};
     public List<Pagina> listpagina;
     private GestorSitiosWeb_IG gContable;
 
@@ -24,12 +24,12 @@ public class ModeloTablaPagina extends AbstractTableModel {
     }
 
     @Override
-    public int getColumnCount() {
+    public int getColumnCount() { //devuelve el número de columnas de la tabla
         return n_colNames.length;
     }
 
     @Override
-    public Object getValueAt(int rowIndex, int columnIndex) {
+    public Object getValueAt(int rowIndex, int columnIndex) {//valor de la celda en concreto
         Pagina p = this.listpagina.get(rowIndex);
 
         switch (columnIndex) {
@@ -42,9 +42,11 @@ public class ModeloTablaPagina extends AbstractTableModel {
             case 3:
                 return p.getTipoPagina();
             case 4: 
-                return p.getUsuario();
+                return p.getDescripcion();
             case 5:
-               return p.getClave();
+               return p.getUsuario();
+            case 6:
+                return p.getClave();
         }
         return new String();
     }

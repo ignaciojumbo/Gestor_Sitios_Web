@@ -6,7 +6,6 @@ import Utilidad.Utilidad;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.ResultSetImpl;
 import com.mysql.jdbc.Statement;
-import java.io.InputStream;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -35,11 +34,14 @@ public class Controladorbd {
                     + "(`fechaRegistro`, "
                     + "`nombrePagina`, "
                     + "`linkPagina`, "
-                    + "`tipoPagina`) VALUES ("
+                    + "`tipoPagina`"
+                    + "`descripcion`"
+                    + ") VALUES ("
                     + "'" + pagina.getFechaRegistro() + "', "
                     + "'" + pagina.getNombrePagina() + "', "
                     + "'" + pagina.getLinkPagina() + "', "
-                    + "'" + pagina.getTipoPagina() + "');";
+                    + "'" + pagina.getTipoPagina()+ "', "
+                    + "'" + pagina.getDescripcion()+ "');";
 
         } else {
             sql = "INSERT INTO `gestorpagina`.`linkpagina` ("
@@ -47,14 +49,17 @@ public class Controladorbd {
                     + "`nombrePagina`, "
                     + "`linkPagina`, "
                     + "`tipoPagina`, "
+                    + "`descripcion`, "
                     + "`usuario`, "
-                    + "`contraseña`) VALUES ("
-                    + "'" + pagina.getFechaRegistro() + "', "
-                    + "'" + pagina.getNombrePagina() + "', "
-                    + "'" + pagina.getLinkPagina() + "', "
-                    + "'" + pagina.getTipoPagina() + "', "
-                    + "'" + pagina.getUsuario() + "', "
-                    + "'" + util.encriptadorclave(pagina.getClave()) + "');";
+                    + "`contraseña`) "
+                    + "VALUES ("
+                    + "'"+pagina.getFechaRegistro()+"', "
+                    + "'"+pagina.getNombrePagina()+"', "
+                    + "'"+pagina.getLinkPagina()+"', "
+                    + "'"+pagina.getTipoPagina()+"', "
+                    + "'"+pagina.getDescripcion()+"', "
+                    + "'"+pagina.getUsuario()+"', "
+                    + "'"+util.encriptadorclave(pagina.getClave())+"');";
         }
 
         try {
@@ -80,16 +85,18 @@ public class Controladorbd {
                     + "`fechaRegistro` = '" + pagina.getFechaRegistro() + "', "
                     + "`nombrePagina` = '" + pagina.getNombrePagina() + "', "
                     + "`linkPagina` = '" + pagina.getLinkPagina() + "' "
+                    + "`descripcion` = '" + pagina.getDescripcion()+ "' "
                     + "WHERE ("
                     + "`idlinkPagina` = '" + pagina.getIdPagina() + "');";
         } else {
             sql = "UPDATE `gestorpagina`.`linkpagina` SET "
-                    + "`nombrePagina` = '" + pagina.getNombrePagina() + "', "
-                    + "`linkPagina` = '" + pagina.getLinkPagina() + "', "
-                    + "`tipoPagina` = '" + pagina.getTipoPagina() + "', "
-                    + "`usuario` = '" + pagina.getUsuario() + "', "
-                    + "`contraseña` = '" + util.encriptadorclave(pagina.getClave()) + "' "
-                    + "WHERE (`idlinkPagina` = '" + pagina.getIdPagina() + "');";
+                    + "`nombrePagina` = '"+pagina.getNombrePagina()+"', "
+                    + "`linkPagina` = '"+pagina.getLinkPagina()+"', "
+                    + "`tipoPagina` = '"+pagina.getTipoPagina()+"', "
+                    + "`descripcion` = '"+pagina.getDescripcion()+"', "
+                    + "`usuario` = '"+pagina.getUsuario()+"', "
+                    + "`contraseña` = '"+util.encriptadorclave(pagina.getClave())+"'"
+                    + " WHERE (`idlinkPagina` = '"+pagina.getIdPagina()+"');";
         }
 
         try {
@@ -143,8 +150,9 @@ public class Controladorbd {
                 in.setNombrePagina(rs.getString(3));
                 in.setLinkPagina(rs.getString(4));
                 in.setTipoPagina(rs.getString(5));
-                in.setUsuario(rs.getString(6));
-                in.setClave(rs.getString(7));
+                in.setDescripcion(rs.getString(6));
+                in.setUsuario(rs.getString(7));
+                in.setClave(rs.getString(8));
                 listaPaginas.add(in);
             }
             stm.close();
@@ -174,8 +182,9 @@ public class Controladorbd {
                 in.setNombrePagina(rs.getString(3));
                 in.setLinkPagina(rs.getString(4));
                 in.setTipoPagina(rs.getString(5));
-                in.setUsuario(rs.getString(6));
-                in.setClave(util.Desencriptadoclave(rs.getString(7)));
+                in.setDescripcion(rs.getString(6));
+                in.setUsuario(rs.getString(7));
+                in.setClave(util.Desencriptadoclave(rs.getString(8)));
                 listaPaginas.add(in);
 
             }
@@ -206,8 +215,9 @@ public class Controladorbd {
                 in.setNombrePagina(rs.getString(3));
                 in.setLinkPagina(rs.getString(4));
                 in.setTipoPagina(rs.getString(5));
-                in.setUsuario(rs.getString(6));
-                in.setClave(util.encriptadorclave(rs.getString(7)));
+                in.setDescripcion(rs.getString(6));
+                in.setUsuario(rs.getString(7));
+                in.setClave(util.encriptadorclave(rs.getString(8)));
                 listaPaginas.add(in);
 
             }
